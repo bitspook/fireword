@@ -21,6 +21,6 @@ Preferred way of using it is to
 
 ### Recommended way choosing passwords for input
 Use an easy to remember pattern which would be different for different sites. e.g
-      blueFacebookPants
-      greenGooglePants
-      orangeStumbleuponPants
+>     blueFacebookPants  
+>     greenGooglePants  
+>     orangeStumbleuponPants  
