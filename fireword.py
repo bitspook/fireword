@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
-from hashlib import sha1
+from hashlib import sha512 as hash_func
 from collections import defaultdict
 
 class Fireword(object):
-    """Represents a fireword i.e a sha1 hashed password"""
+    """Represents a fireword i.e a hash_func hashed password"""
 
     def __init__(self, password, length=40):
-        self.fireword = self._get_mingleword(str(sha1(password).hexdigest()))[:length]
+        self.fireword = self._get_mingleword(str(hash_func(password).hexdigest()))[:length]
 
     def _get_mingleword(self, password):
 
