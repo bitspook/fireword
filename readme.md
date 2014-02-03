@@ -8,7 +8,7 @@ I heard somewhere that any password you can remember is not strong enough. But I
 So here is a quick password generator (quick in the sense that it took me very less time building it)  
 
 ## How it work
-This script receives a password from command line, convert it into sha1 hash, and mingle some characters to increase the complexity of the password.
+This script receives a password from command line, convert it into sha512 hash, and mingle some characters to increase the complexity of the password.
 It convert some special character on even places with symbols etc. (Read the code, it's simple. Really.)  
 So the result is a long string which can be used as password on real sites.  
 
