@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from hashlib import sha1
+from collections import defaultdict
 
 class Fireword(object):
     """Represents a fireword i.e a sha1 hashed password"""
@@ -11,43 +12,51 @@ class Fireword(object):
 
     def _get_mingleword(self, password):
         """Replaces special chars at even places with symbols/numerals in given password."""
-        specials_at_even = {
-            'a': '@',
-            'b': '[',
-            'e': '3',
-            'i': '!',
-            'o': '0',
-            's': '$',
-            '4': 'A',
-            '3': 'E',
-            '1': 'I',
-            '0': 'O',
+
+        specials = {
+            'a': ['@','4','A'],
+            'b': ['[','7','B'],
+            'c': ['(','6','C', '{','[','<'],
+            'd': [']','2','D'],
+            'e': ['{','3','E'],
+            'f': ['>','1','F'],
+            'h': ['#','5','H'],
+            'i': ['!','1','I'],
+            'o': ['(','0','O'],
+            's': ['$','8','S'],
+            'v': ['^','9','V'],
+            '1': ['|','T','1'],
+            '0': ['+','O','0'],
+            '2': ['?','M','2'],
+            '3': ['%','Y','3'],
+            '4': ['~','X','4'],
+            '5': ['&','Z','5'],
+            '6': ['(','Q','6'],
+            '7': [':','W','7'],
+            '8': ['*','L','8'],
+            '9': ['<','N','9'],
         }
-        specials_at_odd = {
-            'c': '{',
-            'd': ']',
-            'f': '>',
-            'h': '#',
-            'v': '^',
-            '2': '?',
-            '5': '&',
-            '6': '(',
-            '7': '}',
-            '8': '*',
-            '9': '<',
-        }
+
+        def mingled_char_with_count(char, specials_dict, count):
+            if char in specials_dict:
+                if count <= len(specials_dict[char]) :
+                    return specials_dict[char][count-1], count
+                else:
+                    return specials_dict[char][0], 0
+            return char, count
+
         mingleword = ''
+        attempted = defaultdict(int)
         for index, c in enumerate(password):
-            if index % 2 == 0:
-                if c in specials_at_even.keys():
-                    mingleword += specials_at_even[c]
-                else:
-                    mingleword += c
+            if c in attempted:
+                attempted[c] += 1
+            mingle = attempted[c]
+            if mingle:
+                mingled_c, count = mingled_char_with_count(c, specials, attempted[c])
+                mingleword += mingled_c
+                attempted[c] = count
             else:
-                if c in specials_at_odd.keys():
-                    mingleword += specials_at_odd[c]
-                else:
-                    mingleword += c
+                mingleword += c
         return mingleword
 
 if __name__ == "__main__":
