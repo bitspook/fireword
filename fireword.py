@@ -6,12 +6,10 @@ from collections import defaultdict
 class Fireword(object):
     """Represents a fireword i.e a sha1 hashed password"""
 
-    def __init__(self, password):
-        self.password = password
-        self.fireword = self._get_mingleword(str(sha1(self.password).hexdigest()))
+    def __init__(self, password, length=40):
+        self.fireword = self._get_mingleword(str(sha1(password).hexdigest()))[:length]
 
     def _get_mingleword(self, password):
-        """Replaces special chars at even places with symbols/numerals in given password."""
 
         specials = {
             'a': ['@','4','A'],
@@ -57,13 +55,16 @@ class Fireword(object):
                 attempted[c] = count
             else:
                 mingleword += c
-        return mingleword
+        return ''.join([c.upper() if i % 2 else c for i,c in enumerate(mingleword)]) #increase the number of uppercase
 
 if __name__ == "__main__":
     import sys
     if len(sys.argv) < 2:
         print "Error: No password given"
-        print "Usage: fireword <password>"
+        print "Usage: fireword <password> <length>"
     else:
         password = sys.argv[1]
-        print Fireword(password).fireword
+        length = 40
+        if len(sys.argv) > 2:
+            length = int(sys.argv[2])
+        print Fireword(password, length).fireword
