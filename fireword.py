@@ -11,8 +11,9 @@ class Fireword(object):
 
     def _get_mingleword(self, password):
         """Replaces special chars at even places with symbols/numerals in given password."""
-        specials = {
+        specials_at_even = {
             'a': '@',
+            'b': '[',
             'e': '3',
             'i': '!',
             'o': '0',
@@ -22,15 +23,31 @@ class Fireword(object):
             '1': 'I',
             '0': 'O',
         }
+        specials_at_odd = {
+            'c': '{',
+            'd': ']',
+            'f': '>',
+            'h': '#',
+            'v': '^',
+            '2': '?',
+            '5': '&',
+            '6': '(',
+            '7': '}',
+            '8': '*',
+            '9': '<',
+        }
         mingleword = ''
         for index, c in enumerate(password):
             if index % 2 == 0:
-                if c in specials.keys():
-                    mingleword += specials[c]
+                if c in specials_at_even.keys():
+                    mingleword += specials_at_even[c]
                 else:
                     mingleword += c
             else:
-                mingleword += c
+                if c in specials_at_odd.keys():
+                    mingleword += specials_at_odd[c]
+                else:
+                    mingleword += c
         return mingleword
 
 if __name__ == "__main__":
