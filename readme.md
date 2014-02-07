@@ -24,3 +24,10 @@ Use an easy to remember pattern which would be different for different sites. e.
 >     blueFacebookPants  
 >     greenGooglePants  
 >     orangeStumbleuponPants  
+
+## firewor.py
+Python script for standalone use.
+> Usage: python fireword.py <myFacyPassword> [length]
+
+## fireword.js
+Javascript port of fireword.py. Depends on [jsSHA](http://caligatio.github.io/jsSHA/) for generating SHA512 hash of input.
