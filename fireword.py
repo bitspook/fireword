@@ -45,9 +45,9 @@ class Fireword(object):
 
         mingleword = ''
         attempted = defaultdict(int)
-        for index, c in enumerate(password):
+        for c in password:
             if c in attempted:
-                attempted[c] += 1
+ attempted[c] += 1
             mingle = attempted[c]
             if mingle:
                 mingled_c, count = mingled_char_with_count(c, specials, attempted[c])
