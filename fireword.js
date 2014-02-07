@@ -78,7 +78,7 @@ var Fireword = function(password) {
             }
             attempted[c] += 1;
         }
-        // return statement was a list comprehension in coffeescript
+
         return ((function() {
             var k, len2, results;
 
