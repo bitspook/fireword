@@ -1,0 +1,9 @@
+{
+    "name": "fireword-gen",
+    "title": "Fireword Generator for Firefox",
+    "id": "fireword-generator",
+    "description": "Fireword password generator for Firefox",
+    "author": "Charanjit Singh",
+    "license": "MIT",
+    "version": "0.1"
+}
