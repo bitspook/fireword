@@ -3,6 +3,7 @@
     "title": "Fireword Generator for Firefox",
     "id": "fireword-generator",
     "description": "Fireword password generator for Firefox",
+    "permissions": {"private-browsing": true},
     "author": "Charanjit Singh",
     "license": "MIT",
     "version": "0.1"

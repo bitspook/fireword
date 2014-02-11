@@ -1,6 +1,7 @@
 var data = require("sdk/self").data;
 var widgets = require("sdk/widget");
 var panels = require("sdk/panel");
+var clipboard = require("sdk/clipboard");
 
 var gen_panel = panels.Panel({
     width: 300,
@@ -21,4 +22,9 @@ gen_panel.on("show", function() {
 });
 gen_panel.on("hide", function() {
     gen_panel.port.emit("hide");
+});
+
+gen_panel.port.on("copy_generated_password", function(generated_password){
+    clipboard.set(generated_password);
+    gen_panel.hide();
 });

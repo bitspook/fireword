@@ -1,25 +1,26 @@
 var password_length_field = document.getElementById("password_length");
 var display_p = document.getElementById("password_length_display");
 var gen_btn = document.getElementById("gen_btn");
+var copy_btn = document.getElementById("copy_btn");
 var raw_password_field = document.getElementById("raw_password");
 var out = document.getElementById("hashoutput");
 var generator_form = document.forms.generator_form;
 
 
-var update_generated_password = function () {
+var get_generated_password = function () {
     var raw_password = document.getElementById("raw_password").value;
     var password_length = document.getElementById("password_length").value;
     if(raw_password === ''){
-        out.innerHTML = '';
+        out.value = '';
         return;
     }
     var generated_password = new Fireword(raw_password).fireword.substr(0,password_length);
-    out.innerHTML = generated_password;
+    return generated_password;
 };
 
 var reset_panel = function(){
     var out = document.getElementById("hashoutput");
-    out.innerHTML = "";
+    out.value = "";
     raw_password_field.value = '';
     password_length_field.value = 16;
     display_p.innerHTML = password_length_field.value;
@@ -27,20 +28,19 @@ var reset_panel = function(){
 
 password_length_field.addEventListener("input", function(){
     display_p.innerHTML = password_length_field.value;
-    update_generated_password();
+    out.value = get_generated_password();
 });
 
 generator_form.onsubmit = function(){
-    update_generated_password();
+    get_generated_password();
     return false;
 };
 
-addon.port.on("show", function onShow() {
+addon.port.on("hide", function() {
     reset_panel();
-    raw_password_field.focus();
-    gen_btn.onclick = update_generated_password;
 });
 
-addon.port.on("hide", function onHide() {
-    reset_panel();
-});
+reset_panel();
+raw_password_field.focus();
+gen_btn.onclick = function(){out.value= get_generated_password();};
+copy_btn.onclick = function(){addon.port.emit("copy_generated_password", get_generated_password());};
