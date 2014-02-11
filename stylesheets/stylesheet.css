@@ -315,13 +315,50 @@ Full-Width Styles
 
 #downloads {
   position: absolute;
-  width: 210px;
+  width: 490px;
   z-index: 10;
   bottom: -40px;
   right: 0;
   height: 70px;
-  background: url('../images/icon_download.png') no-repeat 0% 90%;
+  background: url('../images/icon_download.png') no-repeat -1% 90%;
 }
+
+.firefox_addon_download_link {
+  display: block;
+  float: right;
+  width: 90px;
+  height:70px;
+  text-indent: -5000px;
+  overflow: hidden;
+  background: url('../images/firefox-inverse-icon.png') no-repeat;
+  background-size: 80%;
+}
+
+.firefox_addon_download_link:hover {
+  background: url('../images/firefox-icon.png') no-repeat;
+  background-size: 80%;
+}
+
+.chrome_addon_download_link {
+  display: block;
+  float: right;
+  width: 90px;
+  height:70px;
+  text-indent: -5000px;
+  overflow: hidden;
+  background: url('../images/google-chrome-icon.png') no-repeat;
+}
+
+.python_download_link{
+  display: block;
+  float: right;
+  width: 90px;
+  height:70px;
+  text-indent: -5000px;
+  overflow: hidden;
+  background: url('../images/terminal-icon.png') no-repeat 0px 8px;
+}
+
 
 .zip_download_link {
   display: block;
