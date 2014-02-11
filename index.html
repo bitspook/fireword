@@ -35,7 +35,58 @@
 <a name="fireword" class="anchor" href="#fireword"><span class="octicon octicon-link"></span></a>fireword</h1>
 
       <section id="online_generator" class="inner">
+        <style>
+          input[type=text],
+          input[type=password],
+          textarea {
+          border: 1px solid rgb(0,144,255);
+          box-shadow: none;
+          border-radius: none;
+          width: 100%;
+          padding: 5px;
+          }
+
+          input[type=range] {
+          background: none;
+          box-shadow: none;
+          width: 100%;
+          }
+
+          ::-moz-range-thumb  {
+          background: rgb(0, 144, 255);
+          width: 15px;
+          height: 15px;
+          border: none;
+          border-radius: 7.5px;
+          }
+
+          ::-moz-range-track {
+          background: rgb(0, 144, 255);
+          border: none;
+          }
+
+          .button {
+          border: none;
+          padding: 10px;
+          background: rgb(0,144,255);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+          font-weight: 700;
+          color: #fff;
+          }
+
+        </style>
         <h2>Online Password Generator</h2>
+        <h4>
+<a name="recommended-way-choosing-passwords-for-input" class="anchor" href="#recommended-way-choosing-passwords-for-input"><span class="octicon octicon-link"></span></a>Recommended way choosing passwords for input</h4>
+
+<p>Use an easy to remember pattern which would be different for different sites. e.g</p>
+
+<blockquote>
+<pre><code>blueFacebookPants  
+greenGooglePants  
+orangeStumbleuponPants  
+</code></pre>
+</blockquote>
         <form action="" name="generator_form" method="post">
           <p>
             <input type="password" name="raw_password" value="" id="raw_password"/>
