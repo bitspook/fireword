@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Fireword : Tool for converting simple easy-to-remember passwords to hard-to-crack passwords." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Fireword</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/channikhabra/fireword">View on GitHub</a>
+
+          <h1 id="project_title">Fireword</h1>
+          <h2 id="project_tagline">Tool for converting simple easy-to-remember passwords to hard-to-crack passwords.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/channikhabra/fireword/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/channikhabra/fireword/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="fireword" class="anchor" href="#fireword"><span class="octicon octicon-link"></span></a>fireword</h1>
+
+<h2>
+<a name="waw-what-and-why" class="anchor" href="#waw-what-and-why"><span class="octicon octicon-link"></span></a>waw (what and why)</h2>
+
+<p>It's a simple tool to convert memorable passwords to hard-to-crack passwords.<br>
+I heard somewhere that any password you can remember is not strong enough. But I've been still using memorable passwords which I thought were safe enough. I used a pattern like &lt;mysecretword&gt;&lt;site_name&gt; etc for most websites I log in to. But I've involved in a kinda research project (in which the system prepares a dictionary of passwords targeting a single user by gathering information about her from her social accounts), and discovered that someone with access to my social accounts (although I don't have many) can easily guess those passwords.<br>
+So here is a quick password generator (quick in the sense that it took me very less time building it)  </p>
+
+<h2>
+<a name="how-it-work" class="anchor" href="#how-it-work"><span class="octicon octicon-link"></span></a>How it work</h2>
+
+<p>This script receives a password from command line, convert it into sha512 hash, and mingle some characters to increase the complexity of the password.
+It convert some special character on even places with symbols etc. (Read the code, it's simple. Really.)<br>
+So the result is a long string which can be used as password on real sites.  </p>
+
+<h2>
+<a name="how-to-use" class="anchor" href="#how-to-use"><span class="octicon octicon-link"></span></a>How to use</h2>
+
+<p>Preferred way of using it is to </p>
+
+<ul>
+<li>give it different password for every site, which you can remember</li>
+<li>generate a password using the script</li>
+<li>copy-paste for login to the site</li>
+<li>regenerate when needed again in future with same password as given in step1</li>
+</ul><h3>
+<a name="recommended-way-choosing-passwords-for-input" class="anchor" href="#recommended-way-choosing-passwords-for-input"><span class="octicon octicon-link"></span></a>Recommended way choosing passwords for input</h3>
+
+<p>Use an easy to remember pattern which would be different for different sites. e.g</p>
+
+<blockquote>
+<pre><code>blueFacebookPants  
+greenGooglePants  
+orangeStumbleuponPants  
+</code></pre>
+</blockquote>
+
+<h2>
+<a name="fireworpy" class="anchor" href="#fireworpy"><span class="octicon octicon-link"></span></a>firewor.py</h2>
+
+<p>Python script for standalone use.</p>
+
+<blockquote>
+<p>Usage: python fireword.py  [length]</p>
+</blockquote>
+
+<h2>
+<a name="firewordjs" class="anchor" href="#firewordjs"><span class="octicon octicon-link"></span></a>fireword.js</h2>
+
+<p>Javascript port of fireword.py. Depends on <a href="http://caligatio.github.io/jsSHA/">jsSHA</a> for generating SHA512 hash of input.</p>
+
+<h2>
+<a name="firefox-extension" class="anchor" href="#firefox-extension"><span class="octicon octicon-link"></span></a>Firefox Extension</h2>
+
+<p>Firefox extension is available at <a href="https://addons.mozilla.org/en-US/firefox/addon/fireword-gen/">https://addons.mozilla.org/en-US/firefox/addon/fireword-gen/</a></p>
+
+<h2>
+<a name="chrome-extension" class="anchor" href="#chrome-extension"><span class="octicon octicon-link"></span></a>Chrome Extension</h2>
+
+<p>I din't want to pay $5 for chrome developer account. So you can download packaged chrome extension from here <a href="https://dl.dropboxusercontent.com/u/35062882/chrome.crx">https://dl.dropboxusercontent.com/u/35062882/chrome.crx</a>  </p>
+
+<p>You can always build from source in ./browser_extensions/chrome. </p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Fireword maintained by <a href="https://github.com/channikhabra">channikhabra</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-47724380-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
