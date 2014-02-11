@@ -31,3 +31,11 @@ Python script for standalone use.
 
 ## fireword.js
 Javascript port of fireword.py. Depends on [jsSHA](http://caligatio.github.io/jsSHA/) for generating SHA512 hash of input.
+
+## Firefox Extension
+Firefox extension is available at https://addons.mozilla.org/en-US/firefox/addon/fireword-gen/
+
+## Chrome Extension
+I din't want to pay $5 for chrome developer account. So you can download packaged chrome extension from here https://dl.dropboxusercontent.com/u/35062882/chrome.crx  
+  
+You can always build from source in ./browser_extensions/chrome. 

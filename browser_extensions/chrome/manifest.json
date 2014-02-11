@@ -1,0 +1,16 @@
+{
+    "manifest_version": 2,
+
+    "name": "Fireword Generator",
+    "description": "Fireword generator for Chrome.",
+    "version": "0.1",
+
+    "permissions": [
+
+    ],
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html",
+        "width": "300px"
+    }
+}

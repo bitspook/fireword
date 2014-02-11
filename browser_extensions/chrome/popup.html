@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <link href="popup_ui.css" rel="stylesheet"/>
+    </head>
+    <body>
+      <form action="" name="generator_form" method="post">
+        <p>
+          <input type="password" name="raw_password" value="" id="raw_password"/>
+        </p>
+        <p>
+          <input type="button" class="button" id="gen_btn" value="Generate" />
+        </p>
+        <p>Password Length: <span id="password_length_display"></span></p>
+        <p>
+          <input id="password_length" type="range" min="8" max="120" step="1" />
+        </p>
+        <textarea id="hashoutput" rows="4" cols="30" name="" readonly=true>
+        </textarea>
+      </form>
+      <script src="sha512.js"></script>
+      <script src="fireword.js"></script>
+      <script src="popup.js"></script>
+    </body>
+</html>

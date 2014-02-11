@@ -1,0 +1,43 @@
+body {
+  background: #fff;
+  color: #222;
+  font-family: sans;
+  padding: 0 10px;
+  width: 250px; 
+}
+
+input[type=text],
+input[type=password],
+textarea {
+  border: 1px solid rgb(121,121,211);
+  box-shadow: none;
+  border-radius: none;
+  width: 100%;
+  padding: 5px;
+}
+
+input[type=range] {
+  background: #fff;
+  box-shadow: none;
+  width: 100%;
+}
+
+::-webkit-slider-thumb {
+  background: rgba(121,121,211,0.9);
+  width: 15px;
+  height: 15px;
+  border: none;
+  border-radius: 7.5px;
+}
+
+::-webkit-range {
+  background: rgba(121,121,211,0.9);
+  border: none;
+}
+
+.button {
+  border: none;
+  padding: 10px;
+  background: rgb(121,121,211);
+  color: #fff;
+}
