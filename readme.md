@@ -1,6 +1,6 @@
 # fireword
 
-> I've also made a quick [web app to generate passwords](http://firewordgen.herokuapp.com/) which use this script.
+> I've also made a quick [web app to generate passwords](http://channikhabra.github.io/fireword/) which use this script.
 
 ##waw (what and why)
 It's a simple tool to convert memorable passwords to hard-to-crack passwords.  
