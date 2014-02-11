@@ -1,2 +1,4 @@
 *.xpi
 fireword_web_app
+*.pem
+*.crx
