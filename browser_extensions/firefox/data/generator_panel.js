@@ -6,13 +6,12 @@ var raw_password_field = document.getElementById("raw_password");
 var out = document.getElementById("hashoutput");
 var generator_form = document.forms.generator_form;
 
-
 var get_generated_password = function () {
-    var raw_password = document.getElementById("raw_password").value;
+    var raw_password = document.getElementById("raw_password").value.trim();
     var password_length = document.getElementById("password_length").value;
     if(raw_password === ''){
         out.value = '';
-        return;
+        return false;
     }
     var generated_password = new Fireword(raw_password).fireword.substr(0,password_length);
     return generated_password;
@@ -42,5 +41,5 @@ addon.port.on("hide", function() {
 
 reset_panel();
 raw_password_field.focus();
-gen_btn.onclick = function(){out.value= get_generated_password();};
+gen_btn.onclick = function(){out.value= get_generated_password()? get_generated_password(): "Enter seed password";};
 copy_btn.onclick = function(){addon.port.emit("copy_generated_password", get_generated_password());};
