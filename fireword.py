@@ -7,7 +7,7 @@ class Fireword(object):
     """Represents a fireword i.e a hash_func hashed password"""
 
     def __init__(self, password, length=40):
-        self.fireword = self._get_mingleword(str(hash_func(password).hexdigest()))[:length]
+        self.fireword = self._get_mingleword(str(hash_func(password.encode("utf-8")).hexdigest()))[:length]
 
     def _get_mingleword(self, password):
 
@@ -60,11 +60,11 @@ class Fireword(object):
 if __name__ == "__main__":
     import sys
     if len(sys.argv) < 2:
-        print "Error: No password given"
-        print "Usage: fireword <password> <length>"
+        print("Error: No password given")
+        print("Usage: fireword <password> <length>")
     else:
         password = sys.argv[1]
         length = 40
         if len(sys.argv) > 2:
             length = int(sys.argv[2])
-        print Fireword(password, length).fireword
+        print(Fireword(password, length).fireword)
