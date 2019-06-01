@@ -2,6 +2,7 @@
 
 from hashlib import sha512 as hash_func
 from collections import defaultdict
+from getpass import getpass
 
 class Fireword(object):
     """Represents a fireword i.e a hash_func hashed password"""
@@ -59,12 +60,26 @@ class Fireword(object):
 
 if __name__ == "__main__":
     import sys
-    if len(sys.argv) < 2:
-        print("Error: No password given")
+    password = ''
+    length = 0
+
+    if len(sys.argv) == 2 and (sys.argv[1] == '-h' or sys.argv[1] == '--help'):
         print("Usage: fireword <password> <length>")
+        print("For hidden password prompt: fireword")
+        exit(0)
+
+    if len(sys.argv) < 2:
+        password = getpass('Enter Password: ')
+        try:
+            length = int(getpass('Length: '))
+            if length <= 0 or length > 130:
+                raise Exception()
+        except Exception:
+            print('ERROR: Length must be a non-zero integer up to 130')
     else:
         password = sys.argv[1]
         length = 40
         if len(sys.argv) > 2:
             length = int(sys.argv[2])
-        print(Fireword(password, length).fireword)
+
+    print(Fireword(password, length).fireword)
