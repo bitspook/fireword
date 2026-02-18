@@ -3,3 +3,4 @@ fireword_web_app
 *.pem
 *.crx
 /result
+/Fireword.egg-info/
